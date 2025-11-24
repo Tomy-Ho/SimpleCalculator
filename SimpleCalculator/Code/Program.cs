@@ -1,4 +1,4 @@
-namespace SimpleCalculator
+namespace SimpleCalculator.Code
 {
     internal static class Program
     {
