@@ -1,3 +1,5 @@
+using System;
+
 namespace SimpleCalculator.Code
 {
     internal static class Program
@@ -12,6 +14,7 @@ namespace SimpleCalculator.Code
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            Console.WriteLine("hello worl");
         }
     }
 }
