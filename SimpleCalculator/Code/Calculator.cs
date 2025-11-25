@@ -2,7 +2,7 @@ using System;
 
 namespace SimpleCalculator.Code
 {
-    internal static class Program
+    internal static class Calculator
     {
         /// <summary>
         ///  The main entry point for the application.
@@ -13,7 +13,7 @@ namespace SimpleCalculator.Code
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new CalculatorUI());
             Console.WriteLine("hello worl");
         }
     }
