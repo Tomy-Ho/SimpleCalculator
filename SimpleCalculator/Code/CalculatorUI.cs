@@ -12,7 +12,8 @@ namespace SimpleCalculator
         private double tempNum = 0;
         private double result = 0;
         private Calculating calculating;
-
+        private System.Drawing.Size originalTextBoxSize;
+        private String originalHistoryButtonText;
         public void setResult(double newResult)
         {
             this.result = newResult;
@@ -56,12 +57,18 @@ namespace SimpleCalculator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            originalTextBoxSize = textBox1.Size;
+            originalHistoryButtonText = button20.Text;
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
             //Button 0
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             tempStringNum += button.Text;
             tempNum = Convert.ToDouble(tempStringNum);
@@ -72,6 +79,11 @@ namespace SimpleCalculator
         private void button12_Click(object sender, EventArgs e)
         {
             //Button 1
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             tempStringNum += button.Text;
             tempNum = Convert.ToDouble(tempStringNum);
@@ -82,6 +94,11 @@ namespace SimpleCalculator
         private void button11_Click(object sender, EventArgs e)
         {
             //Button 2
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             tempStringNum += button.Text;
             tempNum = Convert.ToDouble(tempStringNum);
@@ -92,6 +109,11 @@ namespace SimpleCalculator
         private void button10_Click(object sender, EventArgs e)
         {
             //Button 3
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             tempStringNum += button.Text;
             tempNum = Convert.ToDouble(tempStringNum);
@@ -102,6 +124,11 @@ namespace SimpleCalculator
         private void button16_Click(object sender, EventArgs e)
         {
             //Button 4
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             tempStringNum += button.Text;
             tempNum = Convert.ToDouble(tempStringNum);
@@ -112,6 +139,11 @@ namespace SimpleCalculator
         private void button15_Click(object sender, EventArgs e)
         {
             //Button 5
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             tempStringNum += button.Text;
             tempNum = Convert.ToDouble(tempStringNum);
@@ -122,6 +154,11 @@ namespace SimpleCalculator
         private void button14_Click(object sender, EventArgs e)
         {
             //Button 6
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             tempStringNum += button.Text;
             tempNum = Convert.ToDouble(tempStringNum);
@@ -132,6 +169,11 @@ namespace SimpleCalculator
         private void button8_Click(object sender, EventArgs e)
         {
             //Button 7
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             tempStringNum += button.Text;
             tempNum = Convert.ToDouble(tempStringNum);
@@ -142,6 +184,11 @@ namespace SimpleCalculator
         private void button7_Click(object sender, EventArgs e)
         {
             //Button 8
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             tempStringNum += button.Text;
             tempNum = Convert.ToDouble(tempStringNum);
@@ -152,6 +199,11 @@ namespace SimpleCalculator
         private void button6_Click(object sender, EventArgs e)
         {
             //Button 9
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             tempStringNum += button.Text;
             tempNum = Convert.ToDouble(tempStringNum);
@@ -163,9 +215,14 @@ namespace SimpleCalculator
         private void button1_Click(object sender, EventArgs e)
         {
             //Button %
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             operation = button.Text;
-            currentInput += operation;
+            currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
             firstOperand = tempNum;
             tempNum = 0;
@@ -175,9 +232,14 @@ namespace SimpleCalculator
         private void button2_Click(object sender, EventArgs e)
         {
             //Button ^
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             operation = button.Text;
-            currentInput += operation;
+            currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
             firstOperand = tempNum;
             tempNum = 0;
@@ -187,8 +249,15 @@ namespace SimpleCalculator
         private void button4_Click(object sender, EventArgs e)
         {
             //Button =
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             secondOperand = tempNum;
             calculating.calculate();
+            HistoryData historyData = new HistoryData(firstOperand.ToString(), operation, secondOperand.ToString(), result.ToString());
+            CalcHistory.GetHistoryInstance().getHistoryList().Add(historyData);
             Button button = (Button)sender;
             textBox1.Multiline = true;
             operation = button.Text;
@@ -200,9 +269,14 @@ namespace SimpleCalculator
         private void button5_Click(object sender, EventArgs e)
         {
             //Button /
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             operation = button.Text;
-            currentInput += operation;
+            currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
             firstOperand = tempNum;
             tempNum = 0;
@@ -212,9 +286,14 @@ namespace SimpleCalculator
         private void button17_Click(object sender, EventArgs e)
         {
             //Button +
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             operation = button.Text;
-            currentInput += operation;
+            currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
             firstOperand = tempNum;
             tempNum = 0;
@@ -224,9 +303,14 @@ namespace SimpleCalculator
         private void button13_Click(object sender, EventArgs e)
         {
             //Button x
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             operation = button.Text;
-            currentInput += operation;
+            currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
             firstOperand = tempNum;
             tempNum = 0;
@@ -236,9 +320,14 @@ namespace SimpleCalculator
         private void button9_Click(object sender, EventArgs e)
         {
             //Button -
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             operation = button.Text;
-            currentInput += operation;
+            currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
             firstOperand = tempNum;
             tempNum = 0;
@@ -248,9 +337,40 @@ namespace SimpleCalculator
         private void button3_Click(object sender, EventArgs e)
         {
             //Button Del
+            if (textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
             Button button = (Button)sender;
             textBox1.Clear();
             clearAllVariables();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            //Button History
+            textBox1.Clear();
+            textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            string historyText = " ";
+            Button button = (Button)sender;
+
+            if(textBox1.Size.Height == 200)
+            {
+                textBox1.Size = originalTextBoxSize;
+                button20.Text = originalHistoryButtonText;
+            }
+            else
+            {
+                textBox1.BringToFront();
+                textBox1.Size = new System.Drawing.Size(textBox1.Width, 200);
+                button.Text = "Esc";
+            }
+            foreach (HistoryData data in CalcHistory.GetHistoryInstance().getHistoryList())
+            {
+                historyText = data.firstOpperand + " " + data.operation + " " + data.secondOpperand + "\n= " + data.result;
+                textBox1.Text += historyText + Environment.NewLine;
+            }
         }
     }
 }

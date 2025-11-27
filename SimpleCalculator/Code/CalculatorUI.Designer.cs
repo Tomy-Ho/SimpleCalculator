@@ -54,11 +54,15 @@ namespace SimpleCalculator
             // 
             // textBox1
             // 
+            textBox1.BackColor = SystemColors.InactiveBorder;
+            textBox1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(12, 23);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
             textBox1.Size = new Size(395, 72);
             textBox1.TabIndex = 0;
+            textBox1.TextAlign = HorizontalAlignment.Right;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button1
@@ -278,6 +282,7 @@ namespace SimpleCalculator
             button20.TabIndex = 17;
             button20.Text = "History";
             button20.UseVisualStyleBackColor = true;
+            button20.Click += button20_Click;
             // 
             // CalculatorUI
             // 
