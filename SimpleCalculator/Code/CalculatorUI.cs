@@ -38,6 +38,8 @@ namespace SimpleCalculator
         {
             InitializeComponent();
             this.calculating = new Calculating(this);
+            originalTextBoxSize = textBox1.Size;
+            originalHistoryButtonText = button20.Text;
         }
 
         private void clearAllVariables()
@@ -57,8 +59,7 @@ namespace SimpleCalculator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            originalTextBoxSize = textBox1.Size;
-            originalHistoryButtonText = button20.Text;
+            
         }
 
         private void button19_Click(object sender, EventArgs e)
