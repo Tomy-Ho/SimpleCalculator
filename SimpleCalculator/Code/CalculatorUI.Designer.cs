@@ -29,6 +29,7 @@ namespace SimpleCalculator
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorUI));
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -369,6 +370,7 @@ namespace SimpleCalculator
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(419, 435);
             Controls.Add(tableLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CalculatorUI";
             Text = "Simple Calculator";
             Load += Form1_Load;
