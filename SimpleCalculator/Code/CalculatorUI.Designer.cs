@@ -271,6 +271,7 @@ namespace SimpleCalculator
             button18.TabIndex = 19;
             button18.Text = ",";
             button18.UseVisualStyleBackColor = true;
+            button18.Click += button18_Click;
             // 
             // button19
             // 

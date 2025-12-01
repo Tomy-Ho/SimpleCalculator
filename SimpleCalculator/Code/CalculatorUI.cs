@@ -1,19 +1,20 @@
 using SimpleCalculator.Code;
+using System.Globalization;
 
 namespace SimpleCalculator
 {
     public partial class CalculatorUI : Form
     {
-        private String operation = "";
-        private String currentInput = "";
-        private String tempStringNum = "";
+        private string operation = "";
+        private string currentInput = "";
+        private string tempStringNum = "";
         private double firstOperand = 0;
         private double secondOperand = 0;
         private double tempNum = 0;
         private double result = 0;
         private Calculating calculating;
-        private System.Drawing.Size originalTextBoxSize;
-        private String originalHistoryButtonText;
+        private string originalHistoryButtonText;
+
         public void setResult(double newResult)
         {
             this.result = newResult;
@@ -51,6 +52,7 @@ namespace SimpleCalculator
             tempNum = 0;
             result = 0;
         }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -58,7 +60,7 @@ namespace SimpleCalculator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -68,8 +70,10 @@ namespace SimpleCalculator
             {
                 button20.Text = originalHistoryButtonText;
             }
+
             Button button = (Button)sender;
             tempStringNum += button.Text;
+
             tempNum = Convert.ToDouble(tempStringNum);
             currentInput += button.Text;
             textBox1.Text = currentInput;
@@ -82,8 +86,10 @@ namespace SimpleCalculator
             {
                 button20.Text = originalHistoryButtonText;
             }
+
             Button button = (Button)sender;
             tempStringNum += button.Text;
+
             tempNum = Convert.ToDouble(tempStringNum);
             currentInput += button.Text;
             textBox1.Text = currentInput;
@@ -92,12 +98,14 @@ namespace SimpleCalculator
         private void button11_Click(object sender, EventArgs e)
         {
             //Button 2
-            if(textBox1.Text.Equals("Esc"))
+            if (textBox1.Text.Equals("Esc"))
             {
                 button20.Text = originalHistoryButtonText;
             }
+
             Button button = (Button)sender;
             tempStringNum += button.Text;
+
             tempNum = Convert.ToDouble(tempStringNum);
             currentInput += button.Text;
             textBox1.Text = currentInput;
@@ -110,8 +118,10 @@ namespace SimpleCalculator
             {
                 button20.Text = originalHistoryButtonText;
             }
+
             Button button = (Button)sender;
             tempStringNum += button.Text;
+
             tempNum = Convert.ToDouble(tempStringNum);
             currentInput += button.Text;
             textBox1.Text = currentInput;
@@ -120,12 +130,14 @@ namespace SimpleCalculator
         private void button16_Click(object sender, EventArgs e)
         {
             //Button 4
-            if(textBox1.Text.Equals("Esc"))
+            if (textBox1.Text.Equals("Esc"))
             {
                 button20.Text = originalHistoryButtonText;
             }
+
             Button button = (Button)sender;
             tempStringNum += button.Text;
+
             tempNum = Convert.ToDouble(tempStringNum);
             currentInput += button.Text;
             textBox1.Text = currentInput;
@@ -138,8 +150,10 @@ namespace SimpleCalculator
             {
                 button20.Text = originalHistoryButtonText;
             }
+
             Button button = (Button)sender;
             tempStringNum += button.Text;
+
             tempNum = Convert.ToDouble(tempStringNum);
             currentInput += button.Text;
             textBox1.Text = currentInput;
@@ -152,8 +166,10 @@ namespace SimpleCalculator
             {
                 button20.Text = originalHistoryButtonText;
             }
+
             Button button = (Button)sender;
             tempStringNum += button.Text;
+
             tempNum = Convert.ToDouble(tempStringNum);
             currentInput += button.Text;
             textBox1.Text = currentInput;
@@ -166,8 +182,10 @@ namespace SimpleCalculator
             {
                 button20.Text = originalHistoryButtonText;
             }
+
             Button button = (Button)sender;
             tempStringNum += button.Text;
+
             tempNum = Convert.ToDouble(tempStringNum);
             currentInput += button.Text;
             textBox1.Text = currentInput;
@@ -180,8 +198,10 @@ namespace SimpleCalculator
             {
                 button20.Text = originalHistoryButtonText;
             }
+
             Button button = (Button)sender;
             tempStringNum += button.Text;
+
             tempNum = Convert.ToDouble(tempStringNum);
             currentInput += button.Text;
             textBox1.Text = currentInput;
@@ -194,8 +214,10 @@ namespace SimpleCalculator
             {
                 button20.Text = originalHistoryButtonText;
             }
+
             Button button = (Button)sender;
             tempStringNum += button.Text;
+
             tempNum = Convert.ToDouble(tempStringNum);
             currentInput += button.Text;
             textBox1.Text = currentInput;
@@ -211,8 +233,10 @@ namespace SimpleCalculator
             }
             Button button = (Button)sender;
             operation = button.Text;
+
             currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
+
             firstOperand = tempNum;
             tempNum = 0;
             tempStringNum = " ";
@@ -227,8 +251,10 @@ namespace SimpleCalculator
             }
             Button button = (Button)sender;
             operation = button.Text;
+
             currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
+
             firstOperand = tempNum;
             tempNum = 0;
             tempStringNum = " ";
@@ -241,15 +267,19 @@ namespace SimpleCalculator
             {
                 button20.Text = originalHistoryButtonText;
             }
+
             secondOperand = tempNum;
             calculating.calculate();
+
             HistoryData historyData = new HistoryData(firstOperand.ToString(), operation, secondOperand.ToString(), result.ToString());
             CalcHistory.GetHistoryInstance().getHistoryList().Add(historyData);
+
             Button button = (Button)sender;
             textBox1.Multiline = true;
             operation = button.Text;
             String stringResult = operation + " " + result;
             textBox1.Text = currentInput + Environment.NewLine + stringResult;
+
             clearAllVariables();
         }
 
@@ -262,8 +292,10 @@ namespace SimpleCalculator
             }
             Button button = (Button)sender;
             operation = button.Text;
+
             currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
+
             firstOperand = tempNum;
             tempNum = 0;
             tempStringNum = " ";
@@ -278,8 +310,10 @@ namespace SimpleCalculator
             }
             Button button = (Button)sender;
             operation = button.Text;
+
             currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
+
             firstOperand = tempNum;
             tempNum = 0;
             tempStringNum = " ";
@@ -294,8 +328,10 @@ namespace SimpleCalculator
             }
             Button button = (Button)sender;
             operation = button.Text;
+
             currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
+
             firstOperand = tempNum;
             tempNum = 0;
             tempStringNum = " ";
@@ -310,8 +346,10 @@ namespace SimpleCalculator
             }
             Button button = (Button)sender;
             operation = button.Text;
+
             currentInput += " " + operation + " ";
             textBox1.Text = currentInput;
+
             firstOperand = tempNum;
             tempNum = 0;
             tempStringNum = " ";
@@ -337,7 +375,7 @@ namespace SimpleCalculator
             string historyText = " ";
             Button button = (Button)sender;
 
-            if(textBox1.Text.Equals("Esc"))
+            if (textBox1.Text.Equals("Esc"))
             {
                 button20.Text = originalHistoryButtonText;
             }
@@ -350,6 +388,20 @@ namespace SimpleCalculator
                 historyText = data.firstOpperand + " " + data.operation + " " + data.secondOpperand + "\n= " + data.result;
                 textBox1.Text += historyText + Environment.NewLine;
             }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+
+            if (tempStringNum.Contains(","))
+            {
+                return;
+            }
+
+            tempStringNum += ",";
+
+            currentInput += ",";
+            textBox1.Text = currentInput;
         }
     }
 }
