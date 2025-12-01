@@ -1,6 +1,6 @@
 # SimpleCalculator
 How to install SimpleCalculator:
-- download SimpleCalculator_Application.zip file from repository
+- download SimpleCalculator_Application.zip file from this repository by clicking on "view raw"
 - extract the zip file
 - double click on SimpleCalculatorInstaller.exe to start install
 
