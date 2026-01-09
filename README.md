@@ -1,9 +1,4 @@
 # SimpleCalculator
-(Application only works on Windows OS)
-How to install SimpleCalculator:
-- download SimpleCalculator_Application.zip file from this repository by clicking on "view raw"
-- extract the zip file
-- double click on SimpleCalculatorInstaller.exe to start install
 
 Project Description:<br>
 A simple and easy project to get started into C# programing language. <br>
